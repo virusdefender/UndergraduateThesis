@@ -1,8 +1,10 @@
 judger: https://github.com/QingdaoU/Judger
+
 lorun: https://github.com/lodevil/Lo-runner
+
 版本都是2016年1月22号的
 
-运行在Ubuntu 14.04虚拟机中，虚拟化单核，主机：MacBookPro11 Intel Core i5 2.6 GHz
+运行在Ubuntu 14.04虚拟机中，虚拟化单核，主机：MacBookPro, Intel Core i5, 2.6 GHz
 
 seccomp.py without sandbox
 
