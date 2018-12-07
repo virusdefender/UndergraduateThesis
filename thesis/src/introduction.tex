@@ -1,0 +1,30 @@
+\section{绪论}
+
+\subsection{背景}
+
+在计算机相关课程练习和考试以及ACM集训队日常训练中，OJ起到了非常重要的作用。老师可以可以在OJ上创建题目和比赛，学生可以挑选各种题目进行训练，提高了实践能力和动手能力。
+
+\subsubsection{国内外的OJ}
+
+在 ACM/ICPC 几十年的发展过程中，出现过很多知名的OJ，例如：
+\begin{itemize}
+\item[-]北京大学Online Judge  http://poj.org/
+\item[-]杭州电子科技大学Online Jusge  http://acm.hdu.edu.cn/
+\item[-]UVaOJ  https://uva.onlinejudge.org/
+\end{itemize}
+其中还有些学校将自己的 OJ 开源，供其他的学校免费试用，例如：
+\begin{itemize}
+\item[-]华中科技大学Online Judge  https://github.com/zhblue/hustoj
+\item[-]DMOJ  https://github.com/DMOJ/site
+\item[-]GoOnlineJudge  https://github.com/ZJGSU-Open-Source/GoOnlineJudge
+\end{itemize}
+
+\subsubsection{项目的意义}
+
+上文提到有很多大学开放了自己的OJ，但是我们在使用的时候还是遇到了一些问题，包括系统界面简陋、操作复杂、没有题目添加权限、举办比赛需要申请、申请流程繁琐等等。在进行开源OJ二次开发的时候也有很多问题，主要是软件文档不全、代码质量偏低、部分设计和架构上存在明显的问题。
+
+比如某开源OJ，使用daemon进程轮询数据库来获取新的提交，这样在已有大量数据记录的情况下可能会给数据库造成较大的压力，新提交的评测也无法立即进行评测，必须等到下一次轮询。同时判题沙箱部分和调度部分耦合，造成Web服务器和判题服务器分离困难。
+
+还有的OJ存在安全漏洞，比如沙箱绕过、SQL注入、XSS、CSRF和越权等，这些都可能威胁OJ的正常运行和数据安全。
+
+所以有必要开发一个新的OJ系统，从根本上解决这个问题，为大家提供一个稳定可用的环境。同时本系统在设计上就兼顾了校内教学和考试平台，老师可以在上面进行日常的布置作业和考试等。
